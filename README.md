@@ -1,2 +1,2 @@
 # EntornoServidor
-hola
+Cuentas, servicios que ofrecer, expansible
