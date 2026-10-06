@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+{% load static %} <!-- Esta línea le dice a django que usaremos los static -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DiegoGuapo.com | Apuntes y Recursos de Clase</title>
+
+    <!-- Esta línea le dice a django que busque dentro de los static
+un archivo llamado style.css y que me devuelva el path -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar" aria-label="Avatar de Diego">D</div>
+            <div>
+                <h1>DiegoGuapo.com</h1>
+                <div>La mejor fuente de informacion</div>
+            </div>
+        </header>
+
+        
+        <main class="grid">
+            <a class="btn" href="2DAW/" target="_self">2ºDAW (2026-2027)</a>
+            <a class="btn" href="PDF/" target="_self">1ºDAW (2025-2026)</a>
+            <a class="btn" href="Tutorial/" target="_self">Guía de Arrays</a>
+            <a class="btn" href="Minijuegos/" target="_self">Mini-juegos de clase</a>
+        </main>
+        <section class="Donaciones">
+            <a class="btn" href="Donaciones/" target="_self">Donaciones</a>
+        </section>
+        
+        <footer>
+            &copy; 2026 — La mejor web (Para Bizum, contactar al creador)
+        </footer>
+    </div>
+
+</html>
