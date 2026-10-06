@@ -19,11 +19,13 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('carrusel/', include('Carrusel.urls')),
 ]
 
 from . import views
 urlpatterns = [
-path('admin/', admin.site.urls),
-path('', views.homepage)
+    path('admin/', admin.site.urls),
+    path('', views.homepage),
+
+    path('Carrusel/', include('Carrusel.urls'))
 ]
+
