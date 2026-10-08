@@ -1,2 +1,13 @@
-Pipfile.lock
-__pycache__/*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+.vscode/
+.idea/
+.venv/
+env/
+venv/
