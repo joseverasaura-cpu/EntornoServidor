@@ -1,0 +1,106 @@
+:root {
+    color-scheme: dark;
+    --bg: #0f1724;
+    --card: #0b1220;
+    --accent: #7dd3fc;
+    --muted: #9aa6b2;
+    --btn-bg: rgba(255, 255, 255, 0.05);
+    --btn-hover: rgba(125, 211, 252, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(180deg, #071022 0%, var(--bg) 60%);
+    color: #e6f0f6;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    padding: 48px 24px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #203040, #102233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--btn-bg);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+}
+section p  {
+    justify-content: center;
+}
