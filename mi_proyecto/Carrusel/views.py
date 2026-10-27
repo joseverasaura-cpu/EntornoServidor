@@ -1,3 +1,3 @@
 from django.shortcuts import render
-def Carrusel(request):
-    return render(request, 'Carrusel/home.html')
+def carrusel(request):
+    return render(request, 'carrusel/home.html')

@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class CarruselConfig(AppConfig):
-    name = 'Carrusel'
+    name = 'carrusel'

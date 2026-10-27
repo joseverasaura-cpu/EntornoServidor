@@ -1,0 +1,70 @@
+{% extends "home.html" %}
+{% block main %}
+<form action="#" method="">
+
+    <!-- Sección 1: Datos personales -->
+    <fieldset>
+        <legend>Información de contacto</legend>
+
+        <p>
+            <label for="nombre">Nombre completo:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana García" required>
+        </p>
+
+        <p>
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+        </p>
+    </fieldset>
+
+    <br>
+
+    <!-- Sección 2: Opinión y Sugerencias -->
+    <fieldset>
+        <legend>Tus Sugerencias</legend>
+
+        <p>
+            <label for="categoria">¿Sobre qué trata tu sugerencia?</label><br>
+            <select id="categoria" name="categoria">
+                <option value="diseno">Diseño y colores</option>
+                <option value="contenido">Contenido y textos</option>
+                <option value="error">Reportar un error o fallo</option>
+                <option value="funcionalidad">Nueva función o idea</option>
+                <option value="otro">Otro</option>
+            </select>
+        </p>
+
+        <p>
+            <label>¿Qué te parece la nueva web en general?</label><br>
+            <input type="radio" id="excelente" name="valoracion" value="excelente">
+            <label for="excelente">Excelente</label><br>
+
+            <input type="radio" id="buena" name="valoracion" value="buena" checked>
+            <label for="buena">Buena</label><br>
+
+            <input type="radio" id="regular" name="valoracion" value="regular">
+            <label for="regular">Puede mejorar</label>
+        </p>
+
+        <p>
+            <label for="comentario">Detalla tu sugerencia o comentario:</label><br>
+            <textarea id="comentario" name="comentario" rows="5" cols="40" placeholder="Escribe aquí tus ideas..."
+                required></textarea>
+        </p>
+    </fieldset>
+
+    <br>
+
+    <!-- Sección 3: Confirmación y Envio -->
+    <p>
+        <input type="checkbox" id="respuesta" name="respuesta" value="si">
+        <label for="respuesta">Deseo recibir una respuesta por correo electrónico</label>
+    </p>
+
+    <p>
+        <button type="submit">Enviar sugerencia</button>
+        <button type="reset">Limpiar formulario</button>
+    </p>
+
+</form>
+{% endblock main %}

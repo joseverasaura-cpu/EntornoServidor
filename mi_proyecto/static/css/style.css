@@ -104,3 +104,9 @@ footer {
 section p  {
     justify-content: center;
 }
+
+div #jeff{
+    max-width: 90vw;
+    height: auto;
+    
+}

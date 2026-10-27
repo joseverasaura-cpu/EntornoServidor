@@ -1,14 +1,37 @@
 <!doctype html>
 <html lang="es">
 {% load static %} <!-- Esta línea le dice a django que usaremos los static -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DiegoGuapo.com | Apuntes y Recursos de Clase</title>
 
-    <!-- Esta línea le dice a django que busque dentro de los static
-un archivo llamado style.css y que me devuelva el path -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% comment %} Esta línea le dice a django que busque dentro de los static
+    un archivo llamado style.css y que me devuelva el path {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnCalendar = document.getElementById('calendar');
+
+            if (btnCalendar) {
+                btnCalendar.addEventListener('click', () => {
+                    const entrada = prompt("Introduce una fecha con formato DIA-MES-AÑO (ej: 31-2-2020):");
+
+                    if (entrada) {
+                        const fechaFormateada = entrada.trim().replace(/[/.]/g, '-');
+
+                        // Solo valida que sean 3 grupos de números separados por guiones
+                        const regexFecha = /^\d+-\d+-\d+$/;
+
+                        if (regexFecha.test(fechaFormateada)) {
+                            window.location.href = `/calendario/${fechaFormateada}`;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -18,24 +41,34 @@ un archivo llamado style.css y que me devuelva el path -->
             <div>
                 <h1>DiegoGuapo.com</h1>
                 <div>La mejor fuente de informacion</div>
-                <a class="btn" href="Carrusel" target="_self">Carrusel App (En proceso)</a>
             </div>
         </header>
+        {% block main %}
+        <div>
+            <img id="jeff" src="{% static 'images/1.png' %}" alt="Imagen graciosa">
+        </div>
 
-        <img src="{% static 'images/1.png' %}" alt="Imagen graciosa">
         <main class="grid">
+            <a class="btn" href="{% url "texteo" %}" target="_self">texteo</a>
+            <a class="btn" href="{% url "carrusel:homepage" %}">Carrusel App (En proceso)</a>
+            <button id="calendar" class="btn" href="{% url "calendario:calendario" fecha='31-2-2020' %}"
+                target="_self">Fecha</button>
+            {% comment %}
             <a class="btn" href="2DAW/" target="_self">2ºDAW (2026-2027)</a>
             <a class="btn" href="PDF/" target="_self">1ºDAW (2025-2026)</a>
             <a class="btn" href="Tutorial/" target="_self">Guía de Arrays</a>
             <a class="btn" href="Minijuegos/" target="_self">Mini-juegos de clase</a>
-        </main>
-        <section class="Donaciones">
             <a class="btn" href="Donaciones/" target="_self">Donaciones</a>
-        </section>
-        
+
+            {% endcomment %}
+
+        </main>
+        {% endblock main %}
         <footer>
             &copy; 2026 — La mejor web (Para Bizum, contactar al creador)
+            <a href="{% url "form" %}">Alguna sugerencia? Rellena este formulario</a>
         </footer>
+
     </div>
 
 </html>

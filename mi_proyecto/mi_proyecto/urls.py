@@ -21,8 +21,11 @@ from django.urls import include, path
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage),
+    path('', views.homepage, name='homepage'),
 
-    path('Carrusel/', include('Carrusel.urls'))
+    path('carrusel/', include('carrusel.urls')),
+    path('text/', views.text, name='texteo'),
+    path('form/', views.form, name='form'),
+    path('calendario/', include('calendario.urls'))
 ]
 
