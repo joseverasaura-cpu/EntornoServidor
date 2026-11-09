@@ -26,6 +26,7 @@ urlpatterns = [
     path('carrusel/', include('carrusel.urls')),
     path('text/', views.text, name='texteo'),
     path('form/', views.form, name='form'),
-    path('calendario/', include('calendario.urls'))
+    path('calendario/', include('calendario.urls')),
+    path('enraya/', include('enraya.urls'), name='enraya')
 ]
 

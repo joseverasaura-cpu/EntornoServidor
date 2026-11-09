@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DiegoGuapo.com | Apuntes y Recursos de Clase</title>
 
-    {% comment %} Esta línea le dice a django que busque dentro de los static
-    un archivo llamado style.css y que me devuelva el path {% endcomment %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -44,14 +42,12 @@
             </div>
         </header>
         {% block main %}
-        <div>
             <img id="jeff" src="{% static 'images/1.png' %}" alt="Imagen graciosa">
-        </div>
 
         <main class="grid">
-            <a class="btn" href="{% url "texteo" %}" target="_self">texteo</a>
+            <a class="btn" href="{% url "enraya:homepage" %}" target="_self">3 en raya</a>
             <a class="btn" href="{% url "carrusel:homepage" %}">Carrusel App (En proceso)</a>
-            <button id="calendar" class="btn" href="{% url "calendario:calendario" fecha='31-2-2020' %}"
+            <button id="calendar" class="btn" href="{% url "calendario:homepage" fecha='31-2-2020' %}"
                 target="_self">Fecha</button>
             {% comment %}
             <a class="btn" href="2DAW/" target="_self">2ºDAW (2026-2027)</a>
